@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 /**
  * @SWG\Swagger(
  *     schemes={"http","https"},
- *     host="urlshortenerphp.test",
+ *     host="urlshortenerphp-env.eba-jssdd4kw.sa-east-1.elasticbeanstalk.com",
  *     basePath="/",
  *     @SWG\Info(
  *         version="1.0.0",
