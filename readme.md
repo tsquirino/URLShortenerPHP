@@ -1,6 +1,6 @@
 # URLShortenerPHP
 
-Web system for creating short URLs. Currently hosted on [http://18.230.101.253].
+Web system for creating short URLs. Currently hosted on [http://urlshortenerphp-env.eba-jssdd4kw.sa-east-1.elasticbeanstalk.com].
 
 ## Running instructions
 
@@ -8,22 +8,28 @@ This API can be run using Laradock in any local environment with docker and dock
 
 The following command must be run in the project's root path to get containers with a Nginx server and a MySQL database running:
 
-	```
-	docker-compose up -d nginx mysql
-	```
+```
+docker-compose up -d nginx mysql
+```
 
 'php artisan' commands (such as other commands) can be run in the workspace container automatically created:
 
-	```
-	docker-compose exec workspace bash
-	```
+```
+docker-compose exec workspace bash
+```
 
-The version currently running on [http://18.230.101.253] was deployed using AWS Elastic Beanstalk.
+Before using the API locally, one must run the available migrations in order to setup the database table for managing URLs:
+
+```
+php artisan migrate
+```
+
+The version currently running on [http://urlshortenerphp-env.eba-jssdd4kw.sa-east-1.elasticbeanstalk.com] was deployed using AWS Elastic Beanstalk.
 
 ## Endpoints
 
 A detailed description of the public API endpoints can be found in the OpenAPI-generated
-[documentation page](http://18.230.101.253/api/documentation).
+[documentation page](http://urlshortenerphp-env.eba-jssdd4kw.sa-east-1.elasticbeanstalk.com/api/documentation).
 
 ## Front-end
 
