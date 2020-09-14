@@ -1,0 +1,65 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "URLShortenerPHP",
+        "description": "Laravel project for generating short URLs for redirection",
+        "contact": {
+            "email": "tomas.quirino@mecanica.coppe.ufrj.br"
+        },
+        "version": "1.0.0"
+    },
+    "host": "urlshortenerphp.test",
+    "basePath": "/",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/api/new": {
+            "post": {
+                "tags": [
+                    "URL"
+                ],
+                "summary": "Register new URL",
+                "description": "Register a new short URL for redirection.",
+                "operationId": "newURL",
+                "parameters": [
+                    {
+                        "name": "shortened_url",
+                        "in": "formData",
+                        "description": "Desired shortened URL (leave blank to generate random code).",
+                        "type": "string"
+                    },
+                    {
+                        "name": "original_url",
+                        "in": "formData",
+                        "description": "Original URL for redirection.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "expiration_date",
+                        "in": "formData",
+                        "description": "Expiration date (leave blank to set it as 7 days from now).",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "URL successfully registered."
+                    },
+                    "400": {
+                        "description": "URL could not be added to database."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {},
+    "tags": [
+        {
+            "name": "URL",
+            "description": "Endpoints for managing URLs"
+        }
+    ]
+}
